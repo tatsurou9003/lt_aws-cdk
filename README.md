@@ -1,5 +1,35 @@
 ## LT 用の aws-cdk プロジェクト
 
+## cdkコマンド
+```
+初回プロジェクトの場合、以下コマンドを実行してCDK toolkit（IAMロールやバケットなど）を作成する。
+$ cdk　bootstrap
+```
+
+```
+ymlテンプレート（スタック）作成
+$ cdk synth
+```
+
+```
+スタックのデプロイ
+$ cdk deploy
+```
+
+## samによるlocalテスト実行
+cdk.outディレクトリに出力されたテンプレートをsamに与える
+
+```
+lambdaを直接呼び出す
+$ sam local invoke HelloWorldFunction --no-event -t ./cdk.out/AwsCdkLtStack.template.json
+```
+```
+apigatewayを通してlambdaを呼び出す
+$ sam local start-api -t ./cdk.out/SamWithCdkStack.template.json
+```
+
+
+
 ## Welcome to your CDK Python project!
 
 This is a blank project for CDK development with Python.
