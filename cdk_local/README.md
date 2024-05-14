@@ -34,5 +34,7 @@ cdklocal init -language python
 
 ### LocalStack コンテナにデプロイ
 
+```
 cdklocal bootstrap
 cdklocal deploy
+```
